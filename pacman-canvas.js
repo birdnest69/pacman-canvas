@@ -172,7 +172,7 @@ function geronimo() {
 		this.monsters;
 		this.level = 1;
 		this.refreshLevel = function (h) {
-			$(h).html("Stage: " + this.level);
+			$(h).html("Lvl: " + this.level);
 		};
 		this.canvas = $("#myCanvas").get(0);
 		this.wallColor = "Blue";
