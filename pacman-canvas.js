@@ -22,9 +22,9 @@ const GHOSTS = {
 
 // global constants
 const FINAL_LEVEL = 10;
-const PILL_POINTS = 10;
-const POWERPILL_POINTS = 50;
-const GHOST_POINTS = 100;
+const PILL_POINTS = 1;
+const POWERPILL_POINTS = 5;
+const GHOST_POINTS = 10;
 const HIGHSCORE_ENABLED = true;
 
 
