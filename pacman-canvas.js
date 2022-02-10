@@ -1488,16 +1488,23 @@ function geronimo() {
 		context.fillStyle = "White";
 		context.strokeStyle = "White";
 
+		var pillImg = new Image();
+		pillImg.src = 'img/pill.svg';
+		var powerpillImg = new Image();
+		powerpillImg.src = 'img/powerpill.svg';
+		
 		var dotPosY;
 		if (game.map && game.map.posY && game.map.posY.length > 0) {
 			$.each(game.map.posY, (i, row) => {
 				dotPosY = row.row;
 				$.each(row.posX, (j, column) => {
 					if (column.type == "pill") {
-						context.arc(game.toPixelPos(column.col - 1) + pacman.radius, game.toPixelPos(dotPosY - 1) + pacman.radius, game.pillSize, 0 * Math.PI, 2 * Math.PI);
+						context.drawImage(pillImg, game.toPixelPos(column.col - 1), game.toPixelPos(dotPosY - 1), 2 * pacman.radius, 2 * pacman.radius);
+						//context.arc(game.toPixelPos(column.col - 1) + pacman.radius, game.toPixelPos(dotPosY - 1) + pacman.radius, game.pillSize, 0 * Math.PI, 2 * Math.PI);
 						context.moveTo(game.toPixelPos(column.col - 1), game.toPixelPos(dotPosY - 1));
 					} else if (column.type == "powerpill") {
-						context.arc(game.toPixelPos(column.col - 1) + pacman.radius, game.toPixelPos(dotPosY - 1) + pacman.radius, game.powerpillSizeCurrent, 0 * Math.PI, 2 * Math.PI);
+						context.drawImage(powerpillImg, game.toPixelPos(column.col - 1), game.toPixelPos(dotPosY - 1), 2 * pacman.radius, 2 * pacman.radius);
+//						context.arc(game.toPixelPos(column.col - 1) + pacman.radius, game.toPixelPos(dotPosY - 1) + pacman.radius, game.powerpillSizeCurrent, 0 * Math.PI, 2 * Math.PI);
 						context.moveTo(game.toPixelPos(column.col - 1), game.toPixelPos(dotPosY - 1));
 					}
 				});
