@@ -726,6 +726,7 @@ function geronimo() {
 		this.dazzleImg2.src = 'img/dazzled2.svg';
 		this.deadImg = new Image();
 		this.deadImg.src = 'img/dead.svg';
+		
 		this.direction = right;
 		this.radius = pacman.radius;
 		this.draw = function (context) {
@@ -1527,6 +1528,10 @@ function geronimo() {
 			context.lineTo(pacman.posX + pacman.radius, pacman.posY + pacman.radius);
 			context.stroke();
 			context.fill();
+			var pacImg = new Image();
+			pacImg.src = 'img/pac.svg';
+			context.drawImage(pacImg, pacman.posX, pacman.posY, 2 * pacman.radius, 2 * pacman.radius);
+			
 		}
 
 	}
