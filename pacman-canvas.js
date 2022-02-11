@@ -629,7 +629,7 @@ function geronimo() {
 			this.score += i;
 		};
 		this.refresh = function (h) {
-			$(h).html("Pills: " + this.score);
+			$(h).html("Love: " + this.score);
 		};
 
 	}
